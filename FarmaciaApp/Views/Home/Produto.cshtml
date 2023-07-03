@@ -1,0 +1,19 @@
+﻿@model List<FarmaciaApp.Models.ProdutoViewModel>
+
+@{
+    ViewData["Title"] = "Produto";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Carrinho de compra.</p>
+
+<ul>
+    @foreach (var produto in Model)
+    {
+        <li>@produto.Nome (@produto.Preco)</li>
+    }
+
+</ul>
+
+
+
