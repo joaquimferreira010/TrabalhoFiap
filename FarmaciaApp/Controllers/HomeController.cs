@@ -1,17 +1,22 @@
-﻿using FarmaciaApp.Models;
+﻿using FarmaciaApp.Interfaces;
+using FarmaciaApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 
 namespace FarmaciaApp.Controllers
 {
     public class HomeController : Controller
     {
+        public readonly IProdutosRepository _repository;
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
+
 
         private static List<ProdutoViewModel> produtos = new List<ProdutoViewModel>();
 
@@ -48,5 +53,7 @@ namespace FarmaciaApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+       
     }
 }

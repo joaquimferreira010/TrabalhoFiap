@@ -1,4 +1,8 @@
-﻿@model ProdutoViewModel
+﻿@using FarmaciaApp.Interfaces;
+@model ProdutoViewModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.Taghelpers
+@inject IProdutosRepository repo
+
 
 <h1>Cadastro de Produto</h1>
 <hr />
@@ -14,21 +18,48 @@
             </div>
 
             <div class="card-body">
-                <form asp-asp-controller="Home" asp-action="CreateProduto" method="post"> 
+                <form asp-asp-controller="Produto" asp-action="Create" method="post">
                     <div class="mb-3">
                         <label class="form-label">Nome Produto</label>
-                        <input asp-for=Nome type="text" class="form-control"/>
+                        <input asp-for="Nome" type="text" class="form-control"/>
                     </div>
 
+                    <div class="mb-3">
+                        <label class="form-label">Qtd</label>
+                        <input asp-for="Qtd" type="number" class="form-control"/>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Preço</label>
-                        <input asp-for=Preco type="number" class="form-control"/>
+                        <input asp-for="Preco" type="number" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="submit" value="Incluir" class="btn btn-primary">Salvar</button>
                     </div>
                 </form>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Qtd</th>
+                            <th>Preco</th>
+                        </tr>
+                    </thead>
+                    <tdoby>
+                        @foreach (var produto in repo.GetAll())
+                        {
+                            <tr>
+                                <td>@produto.Id</td>
+                                <td>@produto.Nome</td>
+                                <td>@produto.Qtd</td>
+                                <td>@produto.Preco</td>
+                            </tr>
+                        }
+                    </tdoby>
+
+                </table>
 
             </div>
 

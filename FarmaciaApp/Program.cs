@@ -1,7 +1,11 @@
+using FarmaciaApp.Context;
+using FarmaciaApp.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IProdutosRepository, ProdutosRepository>();
 
 var app = builder.Build();
 
