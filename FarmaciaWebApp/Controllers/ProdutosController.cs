@@ -21,5 +21,9 @@ namespace FarmaciaWebApp.Controllers
         {
             return View();
         }
+        public IActionResult Apagar()
+        {
+            return View();
+        }
     }
 }
