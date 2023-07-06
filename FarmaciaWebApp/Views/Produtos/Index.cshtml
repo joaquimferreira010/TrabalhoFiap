@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Listagem de Produtos";
+}
+<div class="text-center">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Produtos" asp-action="Criar">Adicionar novo Produto</a>
+    </div>
+    <br />
+    <h1 class="display-4">Listagem de Produtos</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Anador</td>
+                <td>10</td>
+                <td>5.0</td>
+                <td>50.0</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-controller="Produtos" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-controller="Produtos" asp-action="ApagarConfirmacao">Excluir</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Aspirina</td>
+                <td>15</td>
+                <td>5</td>
+                <td>75.0</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-controller="Produtos" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-controller="Produtos" asp-action="ApagarConfirmacao">Excluir</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Gelou</td>
+                <td>8</td>
+                <td>6</td>
+                <td>50.0</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" asp-controller="Produtos" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-controller="Produtos" asp-action="ApagarConfirmacao">Excluir</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
